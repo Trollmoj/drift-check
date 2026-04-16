@@ -1,6 +1,6 @@
 {
   "name": "drift-check-monorepo",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Monorepo for drift-check tool",
   "workspaces": [
@@ -8,9 +8,10 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run build --workspace=@ordomesh/drift-check",
-    "dev": "npm run dev --workspace=@ordomesh/drift-check",
-    "start": "npm run start --workspace=@ordomesh/drift-check"
+    "build": "pnpm --filter @ordomesh/drift-check build",
+    "dev": "pnpm --filter @ordomesh/drift-check dev",
+    "start": "pnpm --filter @ordomesh/drift-check start",
+    "publish": "pnpm --filter @ordomesh/drift-check build && pnpm --filter @ordomesh/drift-check publish"
   },
   "devDependencies": {
     "@types/node": "^24"
